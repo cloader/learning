@@ -16,6 +16,7 @@ import org.springframework.http.converter.json.GsonHttpMessageConverter;
 import org.springframework.http.converter.json.MappingJackson2HttpMessageConverter;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
 
+import com.alibaba.fastjson.support.spring.FastJsonHttpMessageConverter4;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.datatype.hibernate5.Hibernate5Module;
 
@@ -31,7 +32,9 @@ public class JacksonConfiguration extends WebMvcConfigurerAdapter {
 	 @Override
 	    public void configureMessageConverters(List<HttpMessageConverter<?>> converters) {
 	     System.out.println(converters);   
-		 converters.add(jacksonMessageConverter());
+		 //converters.add(jacksonMessageConverter());
+		 converters.add(new FastJsonHttpMessageConverter4());
+		 //converters.add(new GsonHttpMessageConverter());
 	        super.configureMessageConverters(converters);
 	    }
 
