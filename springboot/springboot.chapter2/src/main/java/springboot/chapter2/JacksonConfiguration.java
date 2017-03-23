@@ -10,9 +10,9 @@ package springboot.chapter2;
 
 import java.util.List;
 
+import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.http.converter.HttpMessageConverter;
-import org.springframework.http.converter.json.GsonHttpMessageConverter;
 import org.springframework.http.converter.json.MappingJackson2HttpMessageConverter;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
 
@@ -27,7 +27,10 @@ import com.fasterxml.jackson.datatype.hibernate5.Hibernate5Module;
 * @date 2017年3月9日 下午3:38:05 
 *  
 */
-@Configuration
+//@Configuration
+@ConditionalOnProperty(name = {"spring.http.converters.preferred-json-mapper"},
+havingValue = "fastjson", 
+matchIfMissing = true)
 public class JacksonConfiguration extends WebMvcConfigurerAdapter {
 	 @Override
 	    public void configureMessageConverters(List<HttpMessageConverter<?>> converters) {

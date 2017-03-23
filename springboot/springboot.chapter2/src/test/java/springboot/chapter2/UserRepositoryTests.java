@@ -8,6 +8,7 @@
  */
 package springboot.chapter2;
 
+import org.jboss.jandex.Main;
 import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -41,5 +42,10 @@ public class UserRepositoryTests {
 		Assert.assertEquals(3, userRepository.findAll().size());
 		Assert.assertEquals(new Integer(3), userRepository.findByNameOrEmail("bb", "cc@126.com").getId());
 		userRepository.delete(userRepository.findByName("aa@126.com"));
+	}
+	
+	public static void main(String[] args) {
+		String lines=""/** ~{111,1}*/;
+		System.out.println(lines);
 	}
 }
