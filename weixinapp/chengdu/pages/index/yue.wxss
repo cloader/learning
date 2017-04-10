@@ -1,7 +1,0 @@
-/* pages/index/yue.wxss */
-.br{
-    display: block
-}
-.detail{
-    margin-top: 50rpx;
-}

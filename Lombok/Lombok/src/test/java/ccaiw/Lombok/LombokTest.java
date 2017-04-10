@@ -20,7 +20,7 @@ import lombok.extern.slf4j.Slf4j;
 
 /** 
 * @ClassName: Test 
-* @Description: TODO(这里用一句话描述这个类的作用) 
+* @Description: (这里用一句话描述这个类的作用) 
 * @author SirChen
 * @date 2017年3月23日 上午10:58:53 
 *  
